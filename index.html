@@ -45,9 +45,6 @@
     .glow-cyan {
       box-shadow: 0 0 30px -5px rgba(20, 184, 166, 0.3);
     }
-    .badge-glow {
-      box-shadow: 0 0 12px rgba(45, 212, 191, 0.2);
-    }
   </style>
 </head>
 <body class="bg-[#0b0f19] text-slate-200 font-sans selection:bg-teal-500 selection:text-white">
@@ -111,7 +108,7 @@
             </a>
             <a href="#certifications" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-slate-600 text-slate-200 font-semibold text-sm transition-all">
               <i data-lucide="award" class="w-4 h-4"></i>
-              Sertifikasi
+              Sertifikasi & Kredensial
             </a>
             <a href="mailto:shifan.windraya@gmail.com" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-teal-500/40 text-slate-400 hover:text-teal-300 text-sm transition-all">
               <i data-lucide="mail" class="w-4 h-4"></i>
@@ -443,127 +440,281 @@
   <section id="certifications" class="py-20 bg-slate-900/40 border-y border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-teal-400">Credentials & Badges</span>
-        <h2 class="text-3xl font-bold text-white mt-2">Sertifikasi & Pelatihan</h2>
-        <p class="text-slate-400 text-sm mt-2">Pengakuan kompetensi resmi dari vendor teknologi terkemuka dan program pelatihan intensif.</p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-teal-400">Credentials & Badges</span>
+          <h2 class="text-3xl font-bold text-white mt-2">Sertifikasi & Pelatihan</h2>
+          <p class="text-slate-400 text-sm mt-1">Sertifikasi kompetensi resmi, kursus vendor (Cisco & Huawei), dan program pelatihan.</p>
+        </div>
+
+        <!-- Filter Sertifikat Tabs -->
+        <div class="flex flex-wrap gap-2 mt-6 md:mt-0 bg-slate-900 p-1.5 rounded-xl border border-slate-800 text-xs font-mono">
+          <button onclick="filterCerts('all')" class="cert-tab active px-3 py-1.5 rounded-lg bg-teal-500 text-slate-950 font-bold transition-all">Semua</button>
+          <button onclick="filterCerts('kompetensi')" class="cert-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Kompetensi</button>
+          <button onclick="filterCerts('cisco')" class="cert-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Cisco Netacad</button>
+          <button onclick="filterCerts('huawei')" class="cert-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Huawei</button>
+          <button onclick="filterCerts('bootcamp')" class="cert-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Bootcamp & Seminar</button>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certsGrid">
 
-        <!-- Cert 1 (MTCNA) -->
-        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-teal-500/40 transition-all relative group">
-          <div class="flex items-start justify-between mb-4">
-            <div class="p-3 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20">
-              <i data-lucide="badge-check" class="w-6 h-6"></i>
+        <!-- 1. MTCNA (Kompetensi) -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-teal-500/40 transition-all relative flex flex-col justify-between" data-category="kompetensi">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                <i data-lucide="badge-check" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30">
+                Sertifikasi Kompetensi
+              </span>
             </div>
-            <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30">
-              Kompetensi
-            </span>
+            <h3 class="text-lg font-bold text-white">MikroTik Certified Network Associate (MTCNA)</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">MikroTik RouterOS & Hardware</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Sertifikasi kompetensi resmi untuk manajemen jaringan, routing, bridging, wireless, firewall filter, QoS bandwith management, dan tunneling.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-teal-300 transition-colors">MikroTik Certified Network Associate (MTCNA)</h3>
-          <p class="text-xs text-slate-400 mt-1 font-mono">MikroTik RouterOS & Hardware</p>
-          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
-            Sertifikasi kompetensi resmi untuk manajemen jaringan, routing, bridging, wireless, firewall filter, QoS bandwith management, dan tunnel.
-          </p>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Verified Credential</span>
-            <span class="text-teal-400">Aktif</span>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-teal-400 font-mono flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Verified
+            </span>
+            <a href="certificates/Kompetensi/MTCNA - Shifan Windraya Prassasti.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-teal-400 transition-colors">
+              Lihat PDF <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Cert 2 (Cisco Course) -->
-        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all relative group">
-          <div class="flex items-start justify-between mb-4">
-            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-              <i data-lucide="award" class="w-6 h-6"></i>
+        <!-- 2. Huawei HCIA-AI -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-red-500/40 transition-all relative flex flex-col justify-between" data-category="huawei">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-red-500/20 text-red-300 border border-red-500/30">
+                Huawei Course
+              </span>
             </div>
-            <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-              Cisco Academy
-            </span>
+            <h3 class="text-lg font-bold text-white">HCIA-AI V4.0 Course Certificate</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Huawei ICT Academy</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Pemahaman komprehensif konsep kecerdasan buatan, machine learning, deep learning, dan implementasi infrastruktur AI Huawei.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">Cisco Networking Academy Certification</h3>
-          <p class="text-xs text-slate-400 mt-1 font-mono">Cisco Systems</p>
-          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
-            Menyelesaikan rangkaian course resmi Cisco yang mencakup fondasi jaringan, routing dan switching essentials, arsitektur enterprise, serta keamanan jaringan.
-          </p>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Enterprise Routing & Switching</span>
-            <span class="text-cyan-400">Course Certificate</span>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Huawei Talent</span>
+            <a href="certificates/Huawei/HCIA-AI V4.0 Course.png" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-red-400 transition-colors">
+              Lihat Sertifikat <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Cert 3 (Huawei Course) -->
-        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-red-500/40 transition-all relative group">
-          <div class="flex items-start justify-between mb-4">
-            <div class="p-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20">
-              <i data-lucide="award" class="w-6 h-6"></i>
+        <!-- 3. Huawei HCIA-Big Data -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-red-500/40 transition-all relative flex flex-col justify-between" data-category="huawei">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20">
+                <i data-lucide="database" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-red-500/20 text-red-300 border border-red-500/30">
+                Huawei Course
+              </span>
             </div>
-            <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-red-500/20 text-red-300 border border-red-500/30">
-              Huawei Talent
-            </span>
+            <h3 class="text-lg font-bold text-white">HCIA-Big Data V3.5 Course Certificate</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Huawei ICT Academy</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Arsitektur pemrosesan data skala besar, teknologi sistem terdistribusi, dan ekosistem Big Data platform Huawei.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-red-300 transition-colors">Huawei ICT Academy Course Certificate</h3>
-          <p class="text-xs text-slate-400 mt-1 font-mono">Huawei ICT Academy</p>
-          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
-            Pembelajaran mendalam mengenai Datacom / Routing & Switching berbasis perangkat Huawei VRP, arsitektur telekomunikasi data, dan jaringan IP modern.
-          </p>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Datacom Track</span>
-            <span class="text-red-400">Course Certificate</span>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Huawei Talent</span>
+            <a href="certificates/Huawei/HCIA-Big Data V3.5 Course.png" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-red-400 transition-colors">
+              Lihat Sertifikat <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Cert 4 (Bootcamp OmahTI) -->
-        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-all relative group">
-          <div class="flex items-start justify-between mb-4">
-            <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+        <!-- 4. Huawei HCIA-Data Center Facility -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-red-500/40 transition-all relative flex flex-col justify-between" data-category="huawei">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20">
+                <i data-lucide="server" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-red-500/20 text-red-300 border border-red-500/30">
+                Huawei Course
+              </span>
             </div>
-            <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-              Bootcamp
-            </span>
+            <h3 class="text-lg font-bold text-white">HCIA-Data Center Facility V2.0</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Huawei ICT Academy</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Desain dan manajemen fasilitas pusat data modern, sistem kelistrikan, pendingin (cooling), dan infrastruktur penunjang data center.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">Bootcamp OmahTI</h3>
-          <p class="text-xs text-slate-400 mt-1 font-mono">OmahTI UGM</p>
-          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
-            Pelatihan intensif pengembangan kompetensi teknologi informasi, kolaborasi tim, dan penerapan best practice pengembangan sistem & infrastruktur.
-          </p>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Tech Intensive</span>
-            <span class="text-emerald-400">Completed</span>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Huawei Talent</span>
+            <a href="certificates/Huawei/HCIA-Data Center Facility V2.0 Course.png" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-red-400 transition-colors">
+              Lihat Sertifikat <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Cert 5 (Sertifikat BNSP / Kompetensi Lain) -->
-        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-yellow-500/40 transition-all relative group">
-          <div class="flex items-start justify-between mb-4">
-            <div class="p-3 rounded-xl bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
-              <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+        <!-- 5. Cisco IT Essentials -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all relative flex flex-col justify-between" data-category="cisco">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <i data-lucide="monitor" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Cisco Netacad
+              </span>
             </div>
-            <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">
-              Sertifikasi Nasional
-            </span>
+            <h3 class="text-lg font-bold text-white">IT Essentials: PC Hardware and Software</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Cisco Networking Academy</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Penguasaan fondasi arsitektur perangkat keras, sistem operasi, instalasi komponen, troubleshooting, dan keamanan perangkat jaringan.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-yellow-300 transition-colors">Uji Kompetensi Keahlian Jaringan</h3>
-          <p class="text-xs text-slate-400 mt-1 font-mono">LSP / Standar Kompetensi Kerja</p>
-          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
-            Verifikasi kompetensi praktis dalam instalasi, konfigurasi, troubleshooting perangkat jaringan kabel maupun nirkabel sesuai standar industri.
-          </p>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Certified Competent</span>
-            <span class="text-yellow-400">Kompeten</span>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Cisco Certified</span>
+            <a href="certificates/Cisco-Netacad/ITEssentialsUpdate20251020-33-alnud2.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors">
+              Lihat PDF <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Cert 6 (Placeholder for Next Target) -->
-        <div class="glass-card p-6 rounded-2xl border border-dashed border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-center text-center items-center">
-          <div class="p-3 rounded-full bg-slate-800/60 text-slate-400 mb-3">
-            <i data-lucide="plus" class="w-6 h-6"></i>
+        <!-- 6. Cisco Intro to IoT -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all relative flex flex-col justify-between" data-category="cisco">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <i data-lucide="wifi" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Cisco Netacad
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Introduction to IoT (Internet of Things)</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Cisco Networking Academy</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Konsep ekosistem Internet of Things, integrasi sensor dan aktuator, konektivitas IP, serta analisis data pada edge device.
+            </p>
           </div>
-          <h4 class="text-white font-medium text-sm">Target Sertifikasi Berikutnya</h4>
-          <p class="text-xs text-slate-400 mt-1">CCNA 200-301 / HCIA-Datacom</p>
-          <span class="mt-3 px-3 py-1 rounded-full text-[10px] font-mono bg-teal-500/10 text-teal-400 border border-teal-500/20">In Progress</span>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Cisco Certified</span>
+            <a href="certificates/Cisco-Netacad/IntrotoIoTUpdate20251020-31-fzc40h.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors">
+              Lihat PDF <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Cisco Python Essentials 1 & 2 -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all relative flex flex-col justify-between" data-category="cisco">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <i data-lucide="code" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Cisco Netacad
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Python Essentials 1 & 2</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Python Institute & Cisco Netacad</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Dasar hingga tingkat lanjut pemrograman Python, OOP, modul, exception handling, dan pemanfaatannya dalam scripting otomasi jaringan.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Badges & Certs</span>
+            <div class="flex items-center gap-2">
+              <a href="certificates/Cisco-Netacad/PythonEssentials1Update20251020-32-g8sdb9.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors">
+                Part 1 <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+              <span class="text-slate-600">·</span>
+              <a href="certificates/Cisco-Netacad/PythonEssentials2Update20251020-33-iqrv0e.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors">
+                Part 2 <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Cisco English for IT & Professional Skills -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all relative flex flex-col justify-between" data-category="cisco">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Cisco Netacad
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">English for IT & Digital Awareness</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Cisco Networking Academy</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Kemampuan komunikasi teknis dalam bahasa Inggris di industri IT global, penyusunan laporan teknis, dan kesadaran keamanan digital.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Cisco Series</span>
+            <a href="certificates/Cisco-Netacad/EnglishforIT2Update20251020-32-z49dg9.pdf" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors">
+              Lihat PDF <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. Bootcamp OmahTI -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-all relative flex flex-col justify-between" data-category="bootcamp">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                Bootcamp
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">OmahTI Bootcamp</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">OmahTI UGM</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Program pelatihan intensif eksplorasi teknologi, pengembangan keterampilan komputasi, kolaborasi tim, dan implementasi proyek praktis.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-emerald-400 font-mono">Completed</span>
+            <a href="certificates/Bootcamp-Seminar/Omah TI Bootcamp.png" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors">
+              Lihat Sertifikat <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 10. DigiStarClub Seminar -->
+        <div class="cert-card glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-purple-500/40 transition-all relative flex flex-col justify-between" data-category="bootcamp">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono uppercase font-bold tracking-wider rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                Seminar / Workshop
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">DigiStar Club Seminar</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">DigiStar Club by Telkom Indonesia</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Partisipasi aktif dalam seminar peningkatan wawasan talenta digital, ekosistem telekomunikasi nasional, dan karir bidang teknologi informasi.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-purple-400 font-mono">Telkom Ecosystem</span>
+            <a href="certificates/Bootcamp-Seminar/Shifan Windraya Prassasti - DigiStarClub Seminar.png" target="_blank" class="inline-flex items-center gap-1 text-xs font-mono text-slate-300 hover:text-purple-400 transition-colors">
+              Lihat Sertifikat <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -625,7 +776,6 @@
 
     // Filter projects logic
     function filterProjects(category) {
-      // Update tab buttons
       const tabs = document.querySelectorAll('.project-tab');
       tabs.forEach(tab => {
         tab.classList.remove('active', 'bg-teal-500', 'text-slate-950', 'font-bold');
@@ -634,8 +784,27 @@
       event.target.classList.add('active', 'bg-teal-500', 'text-slate-950', 'font-bold');
       event.target.classList.remove('text-slate-400');
 
-      // Filter cards
       const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Filter certifications logic
+    function filterCerts(category) {
+      const tabs = document.querySelectorAll('.cert-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active', 'bg-teal-500', 'text-slate-950', 'font-bold');
+        tab.classList.add('text-slate-400');
+      });
+      event.target.classList.add('active', 'bg-teal-500', 'text-slate-950', 'font-bold');
+      event.target.classList.remove('text-slate-400');
+
+      const cards = document.querySelectorAll('.cert-card');
       cards.forEach(card => {
         if (category === 'all' || card.getAttribute('data-category') === category) {
           card.style.display = 'flex';
