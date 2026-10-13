@@ -59,10 +59,11 @@
         <span>SWP<span class="text-slate-400">.net</span></span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-teal-400 transition-colors">Tentang</a>
         <a href="#skills" class="hover:text-teal-400 transition-colors">Keahlian</a>
         <a href="#projects" class="hover:text-teal-400 transition-colors">Proyek</a>
+        <a href="#practicum" class="hover:text-teal-400 transition-colors">Praktikum</a>
         <a href="#certifications" class="hover:text-teal-400 transition-colors">Sertifikasi</a>
         <a href="#contact" class="hover:text-teal-400 transition-colors">Kontak</a>
       </nav>
@@ -104,7 +105,7 @@
           <div class="flex flex-wrap gap-4 pt-2">
             <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold text-sm transition-all glow-cyan">
               <i data-lucide="layers" class="w-4 h-4"></i>
-              Lihat Proyek
+              Lihat Proyek & Dok
             </a>
             <a href="#certifications" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-750 border border-slate-700 hover:border-slate-600 text-slate-200 font-semibold text-sm transition-all">
               <i data-lucide="award" class="w-4 h-4"></i>
@@ -233,8 +234,8 @@
             <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">Cisco Packet Tracer</span>
             <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">GNS3 / EVE-NG</span>
             <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">Wireshark</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">NetFlow / SNMP</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">Firewall Rules</span>
+            <span class="px-2.5 py-1 text-slate-300 text-xs rounded-md bg-slate-800">NetFlow / SNMP</span>
+            <span class="px-2.5 py-1 text-slate-300 text-xs rounded-md bg-slate-800">Firewall Rules</span>
           </div>
         </div>
 
@@ -250,7 +251,7 @@
             <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">Python Scripting</span>
             <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">ESP32 & Sensors</span>
             <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">MQTT Protocol</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">Cloud Computing</span>
+            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-300">MongoDB NoSQL</span>
           </div>
         </div>
 
@@ -258,177 +259,378 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Featured Projects Section -->
   <section id="projects" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-teal-400">Featured Work</span>
-          <h2 class="text-3xl font-bold text-white mt-2">Proyek Portofolio</h2>
-          <p class="text-slate-400 text-sm mt-1">Implementasi desain infrastruktur, simulasi enterprise, dan riset telekomunikasi.</p>
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-teal-400">Featured Work & Projects</span>
+          <h2 class="text-3xl font-bold text-white mt-2">Proyek Utama</h2>
+          <p class="text-slate-400 text-sm mt-1">Implementasi sistem nyata, perancangan arsitektur, dan simulasi enterprise. Klik untuk melihat dokumentasi lengkap.</p>
         </div>
         
         <!-- Filter Tabs -->
         <div class="flex gap-2 mt-6 md:mt-0 bg-slate-900 p-1.5 rounded-xl border border-slate-800 text-xs font-mono">
           <button onclick="filterProjects('all')" class="project-tab active px-3 py-1.5 rounded-lg bg-teal-500 text-slate-950 font-bold transition-all">Semua</button>
-          <button onclick="filterProjects('network')" class="project-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Jaringan</button>
-          <button onclick="filterProjects('wireless')" class="project-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Nirkabel/Telco</button>
-          <button onclick="filterProjects('iot')" class="project-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">IoT & Server</button>
+          <button onclick="filterProjects('jarkom')" class="project-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Jaringan</button>
+          <button onclick="filterProjects('iot')" class="project-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">IoT & Hardware</button>
+          <button onclick="filterProjects('software')" class="project-tab px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Software & DB</button>
         </div>
       </div>
 
       <!-- Project Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
         
-        <!-- Project 1 -->
-        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col" data-category="network">
-          <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
-            <span class="px-2.5 py-1 rounded-md bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono w-max">
-              Network Engineering
-            </span>
-            <div>
-              <i data-lucide="share-2" class="w-8 h-8 text-teal-400 mb-2"></i>
-              <h4 class="font-bold text-white text-lg">Desain Multi-Area OSPF Enterprise Network</h4>
+        <!-- Project 1: PT Teknolink -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col justify-between" data-category="jarkom">
+          <div>
+            <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
+              <span class="px-2.5 py-1 rounded-md bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono w-max">
+                Jaringan Komputer 2
+              </span>
+              <div>
+                <i data-lucide="network" class="w-8 h-8 text-teal-400 mb-2"></i>
+                <h4 class="font-bold text-white text-lg">Infrastruktur Jaringan PT Teknolink</h4>
+              </div>
             </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Perancangan topologi jaringan skala enterprise dengan routing dinamis Multi-Area OSPF, konfigurasi VLAN trunking, inter-VLAN routing, dan redundancy HSRP.
-            </p>
-            <div class="space-y-3">
+            <div class="p-6 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Proposal pengadaan dan konfigurasi infrastruktur jaringan perusahaan skala enterprise. Mengimplementasikan segmentasi multi-departemen melalui VLAN, Trunking, Inter-VLAN Routing, dan ACL.
+              </p>
               <div class="flex flex-wrap gap-1.5 text-xs font-mono">
                 <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Cisco Packet Tracer</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">OSPF</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">VLAN</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">HSRP</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">VLAN & Trunk</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Inter-VLAN</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">RAB Proposal</span>
               </div>
             </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="docs/04_Proyek_Jarkom2_PT_Teknolink.html" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-mono font-semibold transition-all">
+              <span>Buka Dokumentasi & Gambar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col" data-category="wireless">
-          <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
-            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono w-max">
-              Wireless & Telecom
-            </span>
-            <div>
-              <i data-lucide="wifi" class="w-8 h-8 text-cyan-400 mb-2"></i>
-              <h4 class="font-bold text-white text-lg">Perencanaan Cakupan Jaringan WLAN Kampus</h4>
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Analisis kebutuhan bandwidth, perencanaan titik Access Point (AP), mitigasi co-channel interference, dan manajemen terpusat menggunakan sistem CAPsMAN / Controller.
-            </p>
-            <div class="space-y-3">
-              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">MikroTik CAPsMAN</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">RF Heatmap</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">WLAN</span>
+        <!-- Project 2: DOZENT Microsleep -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col justify-between" data-category="iot">
+          <div>
+            <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
+              <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono w-max">
+                IoT & Sistem Tertanam
+              </span>
+              <div>
+                <i data-lucide="eye" class="w-8 h-8 text-purple-400 mb-2"></i>
+                <h4 class="font-bold text-white text-lg">DOZENT: Eye-Tracking Microsleep Detection</h4>
               </div>
             </div>
+            <div class="p-6 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Sistem pendeteksi microsleep real-time menggunakan ESP32-S3-CAM dengan algoritma Eye Aspect Ratio (EAR), alarm audio I2S bertingkat, dan dashboard after-report.
+              </p>
+              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">ESP32-S3-CAM</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Eye Tracking</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">I2S Audio</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">IoT Web Log</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="docs/03_Proyek_IoT_DOZENT_Microsleep.html" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-mono font-semibold transition-all">
+              <span>Buka Dokumentasi & Gambar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col" data-category="network">
-          <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
-            <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono w-max">
-              Security & Monitoring
-            </span>
-            <div>
-              <i data-lucide="activity" class="w-8 h-8 text-emerald-400 mb-2"></i>
-              <h4 class="font-bold text-white text-lg">Analisis Forensik Paket Data & Firewall</h4>
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Inspeksi paket jaringan mendalam menggunakan Wireshark untuk mengidentifikasi bottleneck dan potensi ancaman (DDoS/SYN Flood), dilanjutkan penerapan firewall filter rules.
-            </p>
-            <div class="space-y-3">
-              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Wireshark</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">RouterOS Firewall</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">NAT</span>
+        <!-- Project 3: AeroCheck -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col justify-between" data-category="software">
+          <div>
+            <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
+              <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono w-max">
+                Pemrograman Komputer
+              </span>
+              <div>
+                <i data-lucide="wind" class="w-8 h-8 text-cyan-400 mb-2"></i>
+                <h4 class="font-bold text-white text-lg">AeroCheck: Monitoring AQI Berbasis Web</h4>
               </div>
             </div>
+            <div class="p-6 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Platform web pemantauan Air Quality Index (AQI) real-time berdasarkan lokasi GPS pengguna dengan integrasi API cuaca, kategori polusi, dan visualisasi grafik prediksi.
+              </p>
+              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Python Web</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">AQI API</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Geolocation</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Grafik Prediksi</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="docs/02_Proyek_Prokom_AeroCheck.html" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold transition-all">
+              <span>Buka Dokumentasi & Gambar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col" data-category="iot">
-          <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
-            <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono w-max">
-              IoT & Embedded
-            </span>
-            <div>
-              <i data-lucide="cpu" class="w-8 h-8 text-purple-400 mb-2"></i>
-              <h4 class="font-bold text-white text-lg">Sistem Monitoring Berbasis ESP32 & MQTT</h4>
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Pengembangan node sensor berbasis ESP32 yang mentransmisikan data telemetri secara real-time melalui broker MQTT ke dashboard web dan server Linux.
-            </p>
-            <div class="space-y-3">
-              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">ESP32</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">MQTT Broker</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Linux Server</span>
+        <!-- Project 4: Mood Detector -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col justify-between" data-category="software">
+          <div>
+            <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono w-max">
+                Pemrograman Berorientasi Objek
+              </span>
+              <div>
+                <i data-lucide="smile" class="w-8 h-8 text-emerald-400 mb-2"></i>
+                <h4 class="font-bold text-white text-lg">Mood Detector: Desktop GUI MVC</h4>
               </div>
             </div>
+            <div class="p-6 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Aplikasi desktop deteksi suasana hati berbasis pola arsitektur MVC (Model-View-Controller) dengan Tkinter. Dilengkapi sistem skoring otomatis dan riwayat dengan color-coding.
+              </p>
+              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Python OOP</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Tkinter GUI</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">MVC Pattern</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Color-Coding</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="docs/01_Proyek_PBO_Mood_Detector.html" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold transition-all">
+              <span>Buka Dokumentasi & Gambar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col" data-category="wireless">
-          <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
-            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono w-max">
-              Telecommunication
-            </span>
-            <div>
-              <i data-lucide="radio-tower" class="w-8 h-8 text-cyan-400 mb-2"></i>
-              <h4 class="font-bold text-white text-lg">Analisis Link Budget & Transmisi Nirkabel</h4>
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Studi perhitungan link budget Point-to-Point, evaluasi Fresnel Zone, free-space path loss (FSPL), dan penyesuaian gain antena untuk menjamin availability link.
-            </p>
-            <div class="space-y-3">
-              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Link Budget</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">RF Calculation</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Telecom</span>
+        <!-- Project 5: MongoDB Geospasial -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col justify-between" data-category="software">
+          <div>
+            <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
+              <span class="px-2.5 py-1 rounded-md bg-yellow-500/10 border border-yellow-500/30 text-yellow-300 text-xs font-mono w-max">
+                Basis Data
+              </span>
+              <div>
+                <i data-lucide="database" class="w-8 h-8 text-yellow-400 mb-2"></i>
+                <h4 class="font-bold text-white text-lg">Basis Data Geospasial MongoDB</h4>
               </div>
             </div>
+            <div class="p-6 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Pengelolaan dan import basis data dokumen NoSQL geospasial pada koleksi Airbnb dan Shipwrecks menggunakan Mongoimport dan verifikasi query koordinat spasial.
+              </p>
+              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">MongoDB NoSQL</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Geospatial Data</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Mongoimport</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">JSON/BSON</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="docs/05_Proyek_BasisData_MongoDB_Geospasial.html" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-yellow-500/10 hover:bg-yellow-500/20 border border-yellow-500/30 text-yellow-300 text-xs font-mono font-semibold transition-all">
+              <span>Buka Dokumentasi & Gambar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Project 6 -->
-        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col" data-category="network">
-          <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
-            <span class="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono w-max">
-              Automation & Linux
-            </span>
-            <div>
-              <i data-lucide="terminal" class="w-8 h-8 text-blue-400 mb-2"></i>
-              <h4 class="font-bold text-white text-lg">Automasi Konfigurasi Perangkat Jaringan</h4>
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Scripting otomatisasi backup konfigurasi router dan deployment massal parameter interface menggunakan Python (Netmiko) dan SSH environment.
-            </p>
-            <div class="space-y-3">
-              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Python</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Netmiko/SSH</span>
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Network DevOps</span>
+        <!-- Project 6: Subnetting & Design -->
+        <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all flex flex-col justify-between" data-category="jarkom">
+          <div>
+            <div class="h-44 bg-gradient-to-br from-slate-800 to-slate-900 p-5 flex flex-col justify-between border-b border-slate-800 relative">
+              <span class="px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono w-max">
+                Perancangan Jaringan
+              </span>
+              <div>
+                <i data-lucide="calculator" class="w-8 h-8 text-blue-400 mb-2"></i>
+                <h4 class="font-bold text-white text-lg">Studi Kasus Subnetting & VLSM</h4>
               </div>
             </div>
+            <div class="p-6 space-y-4">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Perhitungan alokasi alamat IP skala besar dengan metode VLSM (Variable Length Subnet Mask), optimasi routing table, dan pengujian topologi di simulator Cisco.
+              </p>
+              <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">IPv4 VLSM</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Packet Tracer</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">IP Planning</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Address Space</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="docs/09_Praktikum_Jarkom2_Semua_Pertemuan.html" class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-mono font-semibold transition-all">
+              <span>Buka Dokumentasi & Gambar</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Practicum & Academic Laboratory Works -->
+  <section id="practicum" class="py-20 bg-slate-900/40 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-teal-400">Academic & Lab Work</span>
+        <h2 class="text-3xl font-bold text-white mt-2">Dokumentasi Praktikum Laboratorium</h2>
+        <p class="text-slate-400 text-sm mt-2">Kumpulan laporan praktikum komprehensif selama masa studi di D-IV Teknologi Rekayasa Internet SV UGM.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Praktikum 1: Nirkabel PTN -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-teal-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                <i data-lucide="radio" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">
+                14 Pertemuan
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Teknologi Nirkabel (PTN)</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">MikroTik Wireless RouterOS</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Konfigurasi Wireless AP, Point-to-Point Bridge, WPA2/WPA3 Enterprise, CAPsMAN Controller, Hotspot Gateway, dan manajemen frekuensi nirkabel.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <a href="docs/10_Praktikum_TeknologiNirkabel_PTN_Semua.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-teal-400 hover:text-teal-300 transition-colors">
+              Lihat Laporan & Gambar Praktikum <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Praktikum 2: Jarkom 2 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <i data-lucide="router" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                14 Pertemuan
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Jaringan Komputer 2 (PJK2)</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Routing, Switching & VPN</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Koneksi Router ke Internet, VLAN & Trunking, Multi-Area OSPF, VPN Tunneling (PPTP/L2TP/IPSec), Bandwidth Management Simple Queue & PCQ.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <a href="docs/09_Praktikum_Jarkom2_Semua_Pertemuan.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors">
+              Lihat Laporan & Gambar Praktikum <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Praktikum 3: Jarkom 1 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-blue-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                <i data-lucide="share-2" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                14 Unit
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Jaringan Komputer 1 (PJK1)</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Dasar Jaringan & MikroTik</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Pengenalan MikroTik, DHCP Server/Client, Static Routing, OSPF Single Area, Firewall NAT Masquerade, dan Filter Rules keamanan dasar.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <a href="docs/08_Praktikum_Jarkom1_Semua_Unit.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-blue-400 hover:text-blue-300 transition-colors">
+              Lihat Laporan & Gambar Praktikum <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Praktikum 4: Teknik Telekomunikasi -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <i data-lucide="radio-tower" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                11 Unit
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Teknik Telekomunikasi</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Modulasi, Transmisi & Optik</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Modulasi Digital (ASK, FSK, PSK), Pulse Code Modulation (PCM), transmisi Fiber Optik, karakteristik antena, dan analisis spektrum frekuensi radio.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <a href="docs/11_Praktikum_TeknikTelekomunikasi_Semua.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition-colors">
+              Lihat Laporan & Gambar Praktikum <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Praktikum 5: PBO -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-purple-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <i data-lucide="code" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                10 Latihan
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Pemrograman Berorientasi Objek</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Python OOP & GUI</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Kelas dan Objek, Enkapsulasi, Inheritance, Polimorfisme, Exception Handling, File I/O, serta perancangan GUI berbasis Tkinter.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <a href="docs/07_Praktikum_PBO_Semua_Latihan.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-purple-400 hover:text-purple-300 transition-colors">
+              Lihat Laporan & Gambar Praktikum <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Praktikum 6: TKD -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 rounded-xl bg-amber-500/10 text-yellow-400 border border-amber-500/20">
+                <i data-lucide="monitor" class="w-6 h-6"></i>
+              </div>
+              <span class="px-2.5 py-1 text-[10px] font-mono rounded bg-amber-500/20 text-yellow-300 border border-amber-500/30">
+                10 Unit
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Teknik Komputer Dasar (TKD)</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Hardware, BIOS & Perakitan</p>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Identifikasi komponen perangkat keras, konfigurasi BIOS/UEFI, instalasi OS Windows/Linux, manajemen partisi disk, dan crimping kabel LAN.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80">
+            <a href="docs/06_Praktikum_TKD_Semua_Unit.html" class="inline-flex items-center gap-1.5 text-xs font-mono text-yellow-400 hover:text-yellow-300 transition-colors">
+              Lihat Laporan & Gambar Praktikum <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
 
@@ -437,7 +639,7 @@
   </section>
 
   <!-- Certifications & Training Section -->
-  <section id="certifications" class="py-20 bg-slate-900/40 border-y border-slate-800/60">
+  <section id="certifications" class="py-20 bg-slate-900/40 border-t border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">

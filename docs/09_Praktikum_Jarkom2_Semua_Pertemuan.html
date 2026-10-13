@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi Praktikum — Jaringan Komputer 2 (PJK2) | Portofolio Shifan Windraya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0f19;
+      color: #cbd5e1;
+    }
+    .markdown-body h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.5rem;
+    }
+    .markdown-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2dd4bf;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.25rem;
+    }
+    .markdown-body h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #38bdf8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .markdown-body p {
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+    .markdown-body ul, .markdown-body ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+    .markdown-body ol {
+      list-style-type: decimal;
+    }
+    .markdown-body li {
+      margin-bottom: 0.35rem;
+    }
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+    }
+    .markdown-body th, .markdown-body td {
+      border: 1px solid #1e293b;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+    .markdown-body th {
+      background-color: #111827;
+      color: #5eead4;
+      font-weight: 600;
+    }
+    .markdown-body tr:nth-child(even) {
+      background-color: rgba(30, 41, 59, 0.4);
+    }
+    .markdown-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      border: 1px solid #334155;
+      margin: 1.25rem 0 0.5rem 0;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .markdown-body em {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .markdown-body code {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #1e293b;
+      color: #38bdf8;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.85em;
+    }
+    .markdown-body pre {
+      background-color: #0d1322;
+      border: 1px solid #1e293b;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    .markdown-body pre code {
+      background-color: transparent;
+      padding: 0;
+      color: #e2e8f0;
+    }
+    .markdown-body hr {
+      border: 0;
+      border-top: 1px solid #1e293b;
+      margin: 2rem 0;
+    }
+    .markdown-body a {
+      color: #2dd4bf;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-2 font-mono text-sm text-teal-400 hover:text-teal-300 transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Kembali ke Portofolio</span>
+      </a>
+      <span class="text-xs font-mono px-2.5 py-1 rounded bg-teal-500/10 text-teal-300 border border-teal-500/20">
+        Dokumentasi Proyek TRI UGM
+      </span>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <main class="max-w-5xl w-full mx-auto px-4 sm:px-6 pt-24 pb-20">
+    <div class="bg-[#111827]/80 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl">
+      <div id="content" class="markdown-body">
+        <div class="animate-pulse text-slate-500 font-mono text-sm">Memuat dokumentasi...</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-8 border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono">
+    Shifan Windraya Prassasti · D-IV Teknologi Rekayasa Internet Sekolah Vokasi UGM
+  </footer>
+
+  <script id="markdown-source" type="text/plain"># Dokumentasi Praktikum — Jaringan Komputer 2 (PJK2)
+
+**Mata Kuliah:** Jaringan Komputer 2  
+**Penyusun:** Shifan Windraya Prassasti (24/541727/SV/24944) — Kelas B2  
+**Dosen Pengampu:** Ardhi Wicaksono Santoso, S.Kom., M.Cs.  
+**Asisten:** Alvin Oktavian Surya Saputra, Muhammad Taqiyuddin Alfatih  
+**Program Studi:** D-IV Teknologi Rekayasa Internet — Sekolah Vokasi UGM, 2025  
+
+> **Platform Utama:** Router MikroTik — dikonfigurasi via **WinBox**
+
+---
+
+## Ringkasan Per Pertemuan
+
+---
+
+### Pertemuan 1 — Menghubungkan Router ke Internet
+
+**Tujuan:**
+1. Mengoneksikan Router dengan Internet via UTP.
+2. Mengoneksikan Router dengan Internet via Wireless.
+3. Menetapkan IP Address Statis atau Dinamis.
+
+**Penyelesaian:**
+- Koneksi router ke internet melalui dua metode: kabel UTP (ether1 ke ISP) dan wireless.
+- Konfigurasi IP address statis pada interface, default route, NAT masquerade.
+- Konfigurasi IP dinamis (DHCP client) pada interface yang terhubung ke ISP.
+
+**Hasil:**
+Router berhasil terhubung ke internet melalui kedua metode (UTP dan wireless). IP statis dan dinamis berhasil dikonfigurasi dan diuji konektivitasnya.
+
+---
+
+### Pertemuan 2 — Kualitas Link Wireless (AP-Station)
+
+**Tujuan:**
+1. Praktikan dapat mengetahui kualitas link antara AP dengan Station.
+2. Praktikan dapat melakukan konfigurasi antar perangkat wireless dengan MikroTik.
+
+**Penyelesaian:**
+Pengukuran kualitas link wireless antara router yang berperan sebagai Access Point (AP) dan Station. Konfigurasi dilakukan melalui WinBox versi 6.49.17 pada RouterOS hAP ac. Analisis parameter link seperti signal strength dan CCQ.
+
+**Perangkat:** PC/Laptop 1 unit, Router MikroTik RB962UiGS-5HacT2HnT, OS Windows 11/Ubuntu.
+
+**Hasil:**
+Kualitas link wireless berhasil diukur dan dianalisis. Mahasiswa memahami faktor-faktor yang mempengaruhi kualitas link wireless (jarak, interferensi, sinyal).
+
+---
+
+![Konfigurasi VLAN Jarkom 2](images/jarkom2_p3_vlan.png)
+*Gambar: Konfigurasi Virtual LAN (VLAN) dan Trunking*
+
+### Pertemuan 3 — Konfigurasi Jaringan Rumah (Home Network)
+
+**Tujuan:**
+- Mengonfigurasi alamat IP.
+- Menyiapkan konfigurasi nirkabel di jaringan rumah.
+- Memverifikasi konektivitas.
+
+**Penyelesaian:**
+Simulasi konfigurasi jaringan rumah sederhana menggunakan MikroTik sebagai router/AP rumahan. Konfigurasi IP address lokal, pengaturan SSID wireless, dan verifikasi konektivitas antar perangkat.
+
+**Hasil:**
+Jaringan rumah sederhana berhasil dikonfigurasi dengan router MikroTik. Konektivitas antar perangkat berhasil diverifikasi.
+
+---
+
+### Pertemuan 4 — Access List, Connect List & Virtual AP
+
+**Tujuan:**
+1. Memahami pengertian Access List, Connect List, dan Virtual Access Point.
+2. Melakukan konfigurasi antar perangkat wireless dengan Virtual Access Point.
+
+**Penyelesaian:**
+- **Access List:** Daftar kontrol akses perangkat yang boleh terhubung ke AP.
+- **Connect List:** Prioritas koneksi dari sisi Station ke AP tertentu.
+- **Virtual AP:** Membuat beberapa SSID virtual dari satu interface wireless fisik untuk segmentasi pengguna.
+
+**Hasil:**
+Virtual Access Point berhasil dibuat — satu router memancarkan beberapa SSID dengan pengaturan akses berbeda. Access List dan Connect List berhasil dikonfigurasi.
+
+---
+
+### Pertemuan 5 — Security Wireless (Hide SSID, WEP, WPA/WPA2)
+
+**Tujuan:**
+1. Mengetahui berbagai cara pengamanan jaringan wireless.
+2. Mengkonfigurasi keamanan jaringan wireless pada MikroTik.
+
+**Penyelesaian:**
+Konfigurasi berbagai metode keamanan wireless:
+- **Hide SSID:** Menyembunyikan nama jaringan agar tidak terdeteksi secara mudah.
+- **WEP:** Enkripsi dasar (sudah usang, rentan).
+- **WPA/WPA2:** Standar enkripsi modern.
+  - **TKIP** vs **AES** — AES (WPA2) adalah standar yang lebih aman.
+  - WPA2 dengan AES adalah konfigurasi keamanan yang direkomendasikan.
+
+**Hasil:**
+Mahasiswa berhasil mengonfigurasi berbagai level keamanan wireless dan memahami perbedaan keamanan serta kompatibilitas antara WEP, WPA, dan WPA2.
+
+---
+
+### Pertemuan 6 — Security 2 (Advanced Wireless Security)
+
+**Tujuan:**
+Memperdalam implementasi keamanan jaringan wireless tingkat lanjut pada MikroTik.
+
+**Penyelesaian:**
+Konfigurasi keamanan wireless lanjutan meliputi autentikasi tambahan, enkripsi yang lebih kuat, dan mekanisme proteksi jaringan dari akses tidak sah.
+
+**Hasil:**
+Implementasi keamanan wireless tingkat lanjut berhasil dikonfigurasi dan diuji.
+
+---
+
+### Pertemuan 7 — Wireless Distribution System (WDS)
+
+**Tujuan:**
+Memahami dan mengonfigurasi Wireless Distribution System (WDS) untuk memperluas jangkauan jaringan wireless.
+
+**Penyelesaian:**
+WDS memungkinkan beberapa Access Point saling terhubung secara wireless untuk memperluas jangkauan jaringan tanpa kabel backbone. Konfigurasi WDS mode pada MikroTik untuk membentuk jaringan mesh wireless.
+
+**Hasil:**
+WDS berhasil dikonfigurasi — beberapa AP saling terhubung dan memperluas jangkauan jaringan wireless secara seamless.
+
+---
+
+### Pertemuan 8 — WDS Mesh dan Nstreme
+
+**Tujuan:**
+Memahami WDS Mesh dan protokol Nstreme untuk optimasi jaringan wireless point-to-point.
+
+**Penyelesaian:**
+- **WDS Mesh:** Topologi mesh wireless di mana setiap node dapat berkomunikasi dengan node lain secara dinamis.
+- **Nstreme:** Protokol MikroTik proprietary untuk meningkatkan throughput dan efisiensi pada link wireless point-to-point.
+
+**Hasil:**
+WDS Mesh dan Nstreme berhasil dikonfigurasi. Performa jaringan wireless meningkat dengan penggunaan Nstreme dibanding standar 802.11.
+
+---
+
+### Pertemuan 9 — Hotspot
+
+**Tujuan:**
+Memahami dan mengonfigurasi Hotspot pada MikroTik untuk manajemen akses pengguna wireless.
+
+**Penyelesaian:**
+Konfigurasi Hotspot MikroTik melalui `IP > Hotspot`: pembuatan user database, konfigurasi halaman login portal, pengaturan bandwidth per user, dan session management.
+
+**Hasil:**
+Hotspot berhasil dikonfigurasi dengan portal login. Manajemen pengguna (tambah/hapus user, batas waktu, kuota) berhasil diimplementasikan.
+
+---
+
+### Pertemuan 10 — Hotspot 2 (Lanjutan)
+
+**Tujuan:**
+Memperdalam konfigurasi Hotspot MikroTik dengan fitur-fitur lanjutan.
+
+**Penyelesaian:**
+Konfigurasi lanjutan Hotspot: kustomisasi halaman portal login, profile manajemen (bandwidth profile berbeda per tier pengguna), dan integrasi dengan RADIUS server untuk autentikasi terpusat.
+
+**Hasil:**
+Sistem Hotspot dengan manajemen pengguna bertingkat berhasil dikonfigurasi — berbagai profil pengguna mendapatkan bandwidth yang berbeda sesuai kategori.
+
+---
+
+![Konfigurasi VPN Tunnel](images/jarkom2_p11_vpn_tunnel.png)
+*Gambar: Pengujian Enkripsi dan Konektivitas VPN Tunnel*
+
+### Pertemuan 11 — Wireless Bonding
+
+**Tujuan:**
+Memahami dan mengonfigurasi Wireless Bonding untuk meningkatkan throughput/redundansi jaringan wireless.
+
+**Penyelesaian:**
+Bonding menggabungkan dua atau lebih interface wireless menjadi satu interface virtual untuk meningkatkan bandwidth total atau menyediakan redundansi link. Konfigurasi bonding mode (LACP/balance-rr) pada MikroTik.
+
+**Hasil:**
+Wireless Bonding berhasil dikonfigurasi. Throughput jaringan meningkat dengan penggabungan dua interface wireless.
+
+---
+
+### Pertemuan 12 — Quality of Service (QoS)
+
+**Tujuan:**
+Memahami dan mengonfigurasi Quality of Service (QoS) pada jaringan wireless MikroTik.
+
+**Penyelesaian:**
+QoS diimplementasikan untuk memberikan prioritas trafik tertentu (misal: video call lebih diprioritaskan dari download file). Konfigurasi Queue Tree, PCQ (Per-Connection Queue), dan marking trafik menggunakan Mangle.
+
+**Hasil:**
+QoS berhasil dikonfigurasi — trafik kritis (VoIP, video) mendapat prioritas bandwidth lebih tinggi, menghasilkan pengalaman pengguna yang lebih baik pada jaringan padat.
+
+---
+
+### Pertemuan 13 — Quality of Service 2 (QoS Lanjutan)
+
+**Tujuan:**
+Memperdalam implementasi QoS dengan kasus dan skenario yang lebih kompleks.
+
+**Penyelesaian:**
+Implementasi QoS lanjutan dengan multiple queue tree dan prioritas bertingkat. Marking trafik berdasarkan protokol, port, atau IP address tujuan untuk manajemen bandwidth yang lebih granular.
+
+**Hasil:**
+QoS multi-level berhasil dikonfigurasi dengan prioritas yang dapat disesuaikan per jenis trafik.
+
+---
+
+### Pertemuan 14 — CAPsMAN (Centralized AP Management)
+
+**Tujuan:**
+Memahami dan mengonfigurasi CAPsMAN untuk manajemen terpusat beberapa Access Point MikroTik.
+
+**Penyelesaian:**
+**CAPsMAN (Controlled Access Point Manager)** memungkinkan satu router pusat mengelola konfigurasi banyak AP secara terpusat. Konfigurasi CAPsMAN controller dan CAP (Controlled Access Point) pada masing-masing router.
+
+**Hasil:**
+CAPsMAN berhasil dikonfigurasi — semua AP terdaftar dan dapat dikelola dari satu titik pusat. Perubahan konfigurasi (SSID, keamanan, channel) di controller otomatis diterapkan ke semua AP.
+
+---
+
+## Ringkasan Topik PJK2
+
+| Pertemuan | Topik | Teknologi/Protokol |
+|-----------|-------|-------------------|
+| 1 | Router ke Internet | UTP, Wireless, IP Static/DHCP |
+| 2 | Kualitas Link Wireless | AP-Station, Signal Quality |
+| 3 | Home Network | IP Config, Wireless Setup |
+| 4 | Virtual AP & Access List | Virtual AP, Connect List |
+| 5 | Security Wireless 1 | Hide SSID, WEP, WPA/WPA2, AES |
+| 6 | Security Wireless 2 | Advanced Security |
+| 7 | WDS | Wireless Distribution System |
+| 8 | WDS Mesh & Nstreme | Mesh Topology, Proprietary Protocol |
+| 9 | Hotspot | Portal Login, User Management |
+| 10 | Hotspot Lanjutan | RADIUS, Bandwidth Profile |
+| 11 | Wireless Bonding | Link Aggregation, Redundancy |
+| 12 | QoS | Queue Tree, Mangle, PCQ |
+| 13 | QoS Lanjutan | Multi-level Priority |
+| 14 | CAPsMAN | Centralized AP Management |
+</script>
+
+  <script>
+    const md = document.getElementById('markdown-source').textContent;
+    document.getElementById('content').innerHTML = marked.parse(md);
+    lucide.createIcons();
+  </script>
+</body>
+</html>
